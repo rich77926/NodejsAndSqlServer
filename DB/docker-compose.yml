@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  MS-SQL:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    restart: always
+    container_name: MS-SQL
+    ports:
+      - 1433:1433
+    volumes:
+      - ./mssql:/var/opt/mssql
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=1qaz@WSX
+      - MSSQL_PID=Developer
